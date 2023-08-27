@@ -5,5 +5,4 @@ import "popper.js/dist/umd/popper";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 
-var element = <button className="btn btn-success">Hello World</button>;
-ReactDOM.render(element, document.getElementById("root"));
+ReactDOM.render(<Navber />, document.getElementById("root"));
