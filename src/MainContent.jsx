@@ -27,7 +27,7 @@ export default class MainContent extends Component {
       {
         id: 3,
         name: "Arslan",
-        phone: "+9231567854",
+        phone: "",
         address: { city: "wah" },
       },
       {
@@ -68,7 +68,15 @@ export default class MainContent extends Component {
                 <tr>
                   <td>{cust.id}</td>
                   <td>{cust.name}</td>
-                  <td>{cust.phone}</td>
+                  {/* if you show conditionaly rendering inspect of null space  */}
+                  <td>
+                    {cust.phone ? (
+                      cust.phone
+                    ) : (
+                      // if you want to customize the conditionaly rendering so include div tag and custome class
+                      <div className="bg-warning p-1">No_phone</div>
+                    )}
+                  </td>
                   <td>{cust.address.city}</td>
                 </tr>
               );
