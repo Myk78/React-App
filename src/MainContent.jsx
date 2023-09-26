@@ -1,7 +1,43 @@
+import { map } from "jquery";
 import { Component } from "react";
 
 export default class MainContent extends Component {
-  state = { pageTitle: "Hello customer", customerCount: 5 };
+  state = {
+    pageTitle: "Hello customer",
+    customerCount: 5,
+    customer: [
+      {
+        id: 1,
+        name: "Muhammad yaseen",
+        phone: "+9231737987",
+        address: { city: "Samaro" },
+      },
+      {
+        id: 1,
+        name: "Barkat ali",
+        phone: "+9234657876",
+        address: { city: "Samaro" },
+      },
+      {
+        id: 2,
+        name: "Muhammad shahzieb",
+        phone: "+9231123245",
+        address: { city: "Samaro" },
+      },
+      {
+        id: 3,
+        name: "Arslan",
+        phone: "+9231567854",
+        address: { city: "wah" },
+      },
+      {
+        id: 4,
+        name: "myk",
+        phone: "+923173678",
+        address: { city: "Samaro" },
+      },
+    ],
+  };
 
   render() {
     return (
@@ -16,6 +52,29 @@ export default class MainContent extends Component {
             Refresh
           </button>
         </h4>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>#Id</th>
+              <th>CustomerName</th>
+              <th>Phone</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Now you can see the value in array so we two option tr five times and second is use javascript map method it's iterate the array and pick one value in one iteration */}
+            {this.state.customer.map((cust) => {
+              return (
+                <tr>
+                  <td>{cust.id}</td>
+                  <td>{cust.name}</td>
+                  <td>{cust.phone}</td>
+                  <td>{cust.address.city}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     );
   }
